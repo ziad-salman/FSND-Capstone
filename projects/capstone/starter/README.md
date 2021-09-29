@@ -1,3 +1,7 @@
+My App URL: https://ziad-capstone-app.herokuapp.com/
+
+
+DATABASE_URL: postgres://qdipwiftjsfazh:9eb786f0a877fa8ed089b5df8d03f30ae65565c76c2f6ef9e23e6e555b12b44e@ec2-34-194-123-31.compute-1.amazonaws.com:5432/d33jjt8vaei5el
 
 Authentication:
 The API has three registered users, you can get the Access_token for each one by login to my app: 

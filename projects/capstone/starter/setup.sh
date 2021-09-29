@@ -1,3 +1,4 @@
+export DATABASE_URL = 'postgres://qdipwiftjsfazh:9eb786f0a877fa8ed089b5df8d03f30ae65565c76c2f6ef9e23e6e555b12b44e@ec2-34-194-123-31.compute-1.amazonaws.com:5432/d33jjt8vaei5el'
 export AUTH0_DOMAIN = 'dev-75nwuja7.us.auth0.com'
 export ALGORITHMS = ['RS256']
 export API_AUDIENCE = 'capstone_api'

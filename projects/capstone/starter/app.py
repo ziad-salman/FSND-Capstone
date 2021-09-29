@@ -55,7 +55,7 @@ def create_app(test_config=None):
 
   @app.route('/movies', methods=['POST'])
   @requires_auth('post:movie')
-  def post_movie(payload):
+  def post_movie(jwt):
 
     title = request.get_json().get('title')
     release_date = request.get_json().get('release_date')
@@ -76,7 +76,7 @@ def create_app(test_config=None):
 
   @app.route('/movies/<id>', methods=['PATCH'])
   @requires_auth('patch:movie')
-  def update_movie(payload, id):
+  def update_movie(jwt, id):
 
     data = request.get_json()
     movie = Movie.query.get(id)
@@ -106,7 +106,7 @@ def create_app(test_config=None):
 
   @app.route('/movies/<id>', methods=['DELETE'])
   @requires_auth('delete:movie')
-  def delete_movie(payload, id):
+  def delete_movie(jwt, id):
     
     movie = Movie.query.get(id)
   
@@ -129,7 +129,7 @@ def create_app(test_config=None):
 
   @app.route('/actors')
   @requires_auth('get:actors')
-  def get_actors(payload):
+  def get_actors(jwt):
 
     try:
 
@@ -149,7 +149,7 @@ def create_app(test_config=None):
 
   @app.route('/actors', methods=['POST'])
   @requires_auth('post:actor')
-  def post_actor(payload):
+  def post_actor(jwt):
 
     name = request.get_json().get('name')
     age = request.get_json().get('age')
@@ -172,7 +172,7 @@ def create_app(test_config=None):
 
   @app.route('/actors/<id>', methods=['PATCH'])
   @requires_auth('patch:actor')
-  def update_actor(payload, id):
+  def update_actor(jwt, id):
 
     data = request.get_json()
     actor = Actor.query.get(id)
@@ -204,7 +204,7 @@ def create_app(test_config=None):
 
   @app.route('/actors/<id>', methods=['DELETE'])
   @requires_auth('delete:actor')
-  def delete_actor(payload, id):
+  def delete_actor(jwt, id):
     
     actor = Actor.query.get(id)
   
@@ -268,4 +268,4 @@ def create_app(test_config=None):
 app = create_app()
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080, debug=True)
+    app.run(host='127.0.0.1', port=8080, debug=True)
